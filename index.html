@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pikhta Servers — Discord‑сервер под ключ</title>
+  <meta name="description" content="Pikhta Servers — создам Discord-сервер под ключ: каналы, роли, права, боты, защита и оформление. Ты получаешь готовый сервер — остаётся позвать людей." />
+  <meta name="theme-color" content="#3ccf9a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233ccf9a'/%3E%3Cpath d='M32 8l13 15h-7l10 13h-7l11 14H12l11-14h-7l10-13h-7z' fill='%230f2e27'/%3E%3Crect x='29' y='48' width='6' height='10' rx='2.5' fill='%230f2e27'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Pikhta Servers — на главную">
+        <span class="logo__mark"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 17 7.5h-2.6l4.1 5.2h-2.7l4.4 5.6H3.8l4.4-5.6H5.5l4.1-5.2H7z" fill="currentColor"/><rect x="10.7" y="17.5" width="2.6" height="5" rx="1.1" fill="currentColor"/></svg></span>
+        <span class="logo__text">Pikhta<b>Servers</b></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#pashok" class="nav__hot">🔥 Для Пашка</a>
+        <a href="#services">Что делаю</a>
+        <a href="#process">Как работаю</a>
+        <a href="#examples">Примеры</a>
+        <a href="#pricing">Цены</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="btn btn--small btn--dark header__cta js-tg">Заказать сервер</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="pill"><span class="pill__dot"></span> Принимаю заказы</span>
+          <h1 class="hero__title">
+            Создам Discord‑сервер <span class="text-mint">под ключ</span>
+          </h1>
+          <p class="hero__lead">
+            Каналы, роли, права, боты, защита и оформление — всё настрою за тебя.
+            Ты получаешь готовый сервер, остаётся только позвать людей.
+          </p>
+          <div class="hero__actions">
+            <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="btn btn--primary js-tg">
+              Заказать сервер
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#examples" class="btn btn--ghost">Смотреть примеры</a>
+          </div>
+          <ul class="hero__stats">
+            <li><b>5 000 ₽</b><span>сервер под ключ</span></li>
+            <li><b>6</b><span>блоков настройки</span></li>
+            <li><b>0</b><span>твоих усилий</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="scene" id="hero-scene">
+            <div class="scene__bubble" id="bot-bubble" role="status" aria-live="polite"></div>
+            <div class="scene__fallback">
+              <span class="logo__mark logo__mark--big">#</span>
+              <p>3D‑сцене нужен WebGL. Остальной сайт работает как обычно.</p>
+            </div>
+            <div class="scene__loader" id="scene-loader"><span></span></div>
+          </div>
+          <div class="scene__hints">
+            <span class="chip"><i>🖱</i> Потяни — покрути сцену</span>
+            <span class="chip"><i>👆</i> Кликни по боту</span>
+            <span class="chip"><i>✦</i> Нажми на иконки</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__hot">🔥 Спецпредложение для Пашка</span><span># правила</span><span>🔊 лобби</span><span>@модератор</span><span># анонсы</span><span>★ ивенты</span><span>⚙ автомодерация</span><span class="marquee__hot">🔥 Спецпредложение для Пашка</span><span># приветствие</span><span>🔊 киновечер</span><span>@участник</span><span>🎫 тикеты</span>
+          <span class="marquee__hot">🔥 Спецпредложение для Пашка</span><span># правила</span><span>🔊 лобби</span><span>@модератор</span><span># анонсы</span><span>★ ивенты</span><span>⚙ автомодерация</span><span class="marquee__hot">🔥 Спецпредложение для Пашка</span><span># приветствие</span><span>🔊 киновечер</span><span>@участник</span><span>🎫 тикеты</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROMO: ПАШОК ============ -->
+    <section class="promo" id="pashok" aria-labelledby="promo-title">
+      <div class="container">
+        <div class="promo__card" id="promo-card">
+          <div class="promo__confetti" id="promo-confetti" aria-hidden="true"></div>
+          <span class="promo__stamp" aria-hidden="true">🔥 Только<br>сегодня</span>
+          <div class="promo__inner">
+            <span class="promo__badge"><span class="promo__siren" aria-hidden="true"></span>Специальное предложение</span>
+            <h2 class="promo__title" id="promo-title">
+              Специальное предложение <span class="promo__name">для Пашка</span>
+            </h2>
+            <p class="promo__lead">Только сегодня цена для тебя:</p>
+            <div class="promo__price"><b>10 000</b><span>₽</span></div>
+            <div class="promo__timer" role="timer" aria-live="off">
+              <span class="promo__timer-label">До конца предложения</span>
+              <div class="promo__clock">
+                <span><b id="t-h">00</b><small>часов</small></span><i>:</i>
+                <span><b id="t-m">00</b><small>минут</small></span><i>:</i>
+                <span><b id="t-s">00</b><small>секунд</small></span>
+              </div>
+            </div>
+            <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="btn promo__btn js-tg">Забрать предложение 🔥</a>
+            <p class="promo__fine">Сервер под ключ: каналы, роли, права, боты, защита и оформление.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Что я делаю</span>
+          <h2>Всё, что нужно серверу для старта</h2>
+          <p>Ты рассказываешь идею — я превращаю её в удобный, безопасный и красивый сервер.</p>
+        </div>
+        <div class="services" id="services-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section section--tinted" id="process">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Как я работаю</span>
+          <h2>От заявки до готового сервера — 5 шагов</h2>
+          <p>Нажимай на шаги, чтобы узнать подробности.</p>
+        </div>
+        <div class="steps reveal">
+          <div class="steps__list" role="tablist" aria-label="Этапы работы" id="steps-list"></div>
+          <article class="steps__panel" id="steps-panel" role="tabpanel" aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXAMPLES ============ -->
+    <section class="section" id="examples">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Примеры</span>
+          <h2>Какой сервер ты можешь получить</h2>
+          <p>Выбери тип — увидишь пример структуры, которую я соберу. Кликай по каналам и категориям, всё живое.</p>
+        </div>
+
+        <div class="templates reveal" id="templates" role="radiogroup" aria-label="Типы серверов"></div>
+
+        <div class="builder reveal">
+          <div class="dc" id="dc">
+            <aside class="dc__rail" id="dc-rail" aria-label="Серверы"></aside>
+            <aside class="dc__channels">
+              <div class="dc__server-name"><b id="server-name"></b></div>
+              <div class="dc__channel-list" id="channel-list"></div>
+            </aside>
+            <section class="dc__chat" aria-label="Предпросмотр канала">
+              <header class="dc__chat-head" id="chat-head"></header>
+              <div class="dc__messages" id="chat-messages"></div>
+              <div class="dc__composer"><span id="composer-placeholder">Написать в #общий</span></div>
+            </section>
+            <aside class="dc__members">
+              <div class="dc__members-list" id="members-list"></div>
+            </aside>
+          </div>
+
+          <div class="advisor">
+            <div class="advisor__head">
+              <span class="advisor__avatar" id="example-icon">🎮</span>
+              <div>
+                <b id="example-title">—</b>
+                <span id="example-stats">—</span>
+              </div>
+            </div>
+            <ul class="advisor__tips" id="example-features"></ul>
+            <a href="#order" class="btn btn--primary btn--block" id="example-order">Хочу такой сервер</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section section--dark" id="why">
+      <div class="container">
+        <div class="section__head section__head--light reveal">
+          <span class="eyebrow eyebrow--light">Почему под ключ</span>
+          <h2>Сэкономишь время и нервы</h2>
+          <p>Самому настраивать сервер — это десятки вкладок, гайдов и забытых галочек в правах. Я делаю это за тебя.</p>
+        </div>
+        <div class="bots" id="why-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section--tinted" id="pricing">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Прайс</span>
+          <h2>Цены</h2>
+          <p>Одна услуга — готовый сервер под ключ.</p>
+        </div>
+        <div class="pricing reveal">
+          <article class="price">
+            <span class="price__tag">Под ключ</span>
+            <h3>Создание Discord‑сервера под ключ</h3>
+            <div class="price__value"><b>5 000</b><span>₽</span></div>
+            <ul class="price__list">
+              <li>Структура категорий и каналов</li>
+              <li>Роли и безопасные права</li>
+              <li>Настройка ботов и автомодерации</li>
+              <li>Правила, приветствие, онбординг</li>
+              <li>Оформление в едином стиле</li>
+            </ul>
+            <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="btn btn--primary btn--block js-tg">Заказать в Telegram</a>
+          </article>
+
+          <article class="price price--special">
+            <span class="price__ribbon">🔥 Только сегодня</span>
+            <span class="price__tag price__tag--light">Специальное предложение для Пашка</span>
+            <h3>Создание Discord‑сервера под ключ</h3>
+            <p class="price__today">Только сегодня цена для тебя:</p>
+            <div class="price__value"><b>10 000</b><span>₽</span></div>
+            <ul class="price__list">
+              <li>Всё то же самое, что в тарифе «Под ключ»</li>
+              <li>Персональное предложение — только для Пашка</li>
+              <li>Действует до конца дня: <b class="js-countdown">--:--:--</b></li>
+            </ul>
+            <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="btn btn--light btn--block js-tg">Забрать предложение 🔥</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ORDER ============ -->
+    <section class="section" id="order">
+      <div class="container order reveal">
+        <div class="order__intro">
+          <span class="eyebrow">Заявка</span>
+          <h2>Расскажи, какой сервер тебе нужен</h2>
+          <p>Заполни форму — я свяжусь с тобой, уточню детали и назову сроки.</p>
+          <ul class="order__perks">
+            <li><i>💬</i> Отвечу и задам пару вопросов по идее</li>
+            <li><i>🛠</i> Соберу сервер и покажу результат</li>
+            <li><i>👑</i> Передам права владельца тебе</li>
+          </ul>
+          <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="tg-card js-tg">
+            <span class="tg-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M21.5 4.2 2.9 11.4c-1 .4-1 1.6.1 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.9 3.6c.7.5 1.7.1 1.9-.7L23 5.6c.3-1.1-.6-1.9-1.5-1.4Z" fill="currentColor"/></svg></span>
+            <span><small>Или напиши сразу в Telegram</small><b class="js-tg-name">@nepikhta</b></span>
+            <span class="tg-card__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <form class="order__form" id="order-form" autocomplete="on" novalidate>
+          <div class="field">
+            <label for="f-name">Как к тебе обращаться</label>
+            <input id="f-name" name="name" type="text" maxlength="40" placeholder="Имя или ник" required />
+          </div>
+          <div class="field">
+            <label for="f-contact">Как связаться</label>
+            <input id="f-contact" name="contact" type="text" maxlength="60" placeholder="Telegram @ник или Discord" required />
+          </div>
+          <div class="field">
+            <span class="field__label" id="f-type-label">Тип сервера</span>
+            <div class="type-chips" id="f-type" role="radiogroup" aria-labelledby="f-type-label"></div>
+          </div>
+          <div class="field">
+            <span class="field__label" id="f-plan-label">Тариф</span>
+            <div class="plan-pick" role="radiogroup" aria-labelledby="f-plan-label">
+              <label class="plan-pick__opt"><input type="radio" name="plan" value="basic" checked /><span><b>Под ключ</b>5 000 ₽</span></label>
+              <label class="plan-pick__opt"><input type="radio" name="plan" value="pashki" /><span><b>🔥 Для Пашка</b>10 000 ₽ · только сегодня</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-wish">Идея и пожелания</label>
+            <textarea id="f-wish" name="wish" rows="4" maxlength="800" placeholder="О чём сервер, для кого, какие каналы и боты точно нужны, любимые цвета…"></textarea>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Отправить заявку в Telegram</button>
+          <p class="order__note" id="order-note">Текст заявки скопируется, и откроется чат в Telegram — просто вставь и отправь.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tinted" id="faq">
+      <div class="container faq">
+        <div class="section__head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Частые вопросы</h2>
+        </div>
+        <div class="faq__list reveal" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Пора запускать свой сервер</h2>
+        <p>Ты придумываешь идею — я делаю всё остальное.</p>
+        <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="btn btn--dark js-tg">Написать в Telegram <span class="js-tg-name">@nepikhta</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="logo">
+        <span class="logo__mark"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 17 7.5h-2.6l4.1 5.2h-2.7l4.4 5.6H3.8l4.4-5.6H5.5l4.1-5.2H7z" fill="currentColor"/><rect x="10.7" y="17.5" width="2.6" height="5" rx="1.1" fill="currentColor"/></svg></span>
+        <span class="logo__text">Pikhta<b>Servers</b></span>
+      </a>
+      <p>Pikhta Servers — создание Discord‑серверов под ключ. Discord — товарный знак Discord Inc.; сайт с ней не связан.</p>
+      <a href="https://t.me/nepikhta" target="_blank" rel="noopener" class="footer__tg js-tg">Telegram: <span class="js-tg-name">@nepikhta</span></a>
+      <a href="#top" class="footer__up">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <a href="#pashok" class="promo-float" id="promo-float"><span>🔥</span> Спецпредложение для Пашка <b>10 000 ₽</b></a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/scene.js" defer></script>
+</body>
+</html>
